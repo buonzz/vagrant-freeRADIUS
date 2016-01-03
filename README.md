@@ -21,3 +21,10 @@ boot up the box
 cd vagrant-freeRADIUS
 vagrant up
 ```
+
+## Usage
+
+The machine has a fixed LAN address at 
+[http://192.168.33.81/](http://192.168.33.81/)
+
+this is by default standard LAMP stack
