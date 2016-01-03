@@ -81,12 +81,14 @@ sudo freeradius -X
 Users is configured to be stored and checked against a MySQL database, here is the credentials:
 
 ```
+# MySQL root user
 username: root
 password: secret
 
 # radius db creds
 username: radius
 password: secret
+database: radius
 ```
 
 There is a test user already inserted to radcheck table
