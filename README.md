@@ -35,16 +35,24 @@ To test the RADIUS server directly, execute inside the VM:
 sudo radtest user1 testpwd localhost 18128 testing123
 ```
 
+the above command uses radtest utility script to test a RADIUS server. the parameters explanation is:
+
+* user1 - the username
+* testpwd - the password
+* localhost - hostname/ip
+* 18128 - the port to connect with
+* testing123 - shared secret
+
 it should reply with
 
 ```
-Sending Access-Request of id 151 to 127.0.0.1 port 1812
+Sending Access-Request of id 238 to 127.0.0.1 port 1812
 	User-Name = "user1"
 	User-Password = "testpwd"
 	NAS-IP-Address = 10.0.2.15
 	NAS-Port = 18128
 	Message-Authenticator = 0x00000000000000000000000000000000
-rad_recv: Access-Reject packet from host 127.0.0.1 port 1812, id=151, length=20
+rad_recv: Access-Accept packet from host 127.0.0.1 port 1812, id=238, length=20
 ```
 
 ## Usage
