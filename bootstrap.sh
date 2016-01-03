@@ -20,7 +20,7 @@ sudo apt-get install freeradius freeradius-mysql freeradius-utils -y
 mysql -u root -psecret -e 'create database radius;grant all on radius.* to radius@localhost identified by "secret";'
 mysql -u root -psecret radius < /etc/freeradius/sql/mysql/schema.sql
 mysql -u root -psecret radius < /etc/freeradius/sql/mysql/nas.sql
-mysql -u root -psecret -e 'INSERT INTO `radcheck`(`username`, `attribute`, `value`) VALUES ("user1", "Password", "testpwd");'
+mysql -u root -psecret -e 'use radius;INSERT INTO `radcheck`(`username`, `attribute`, `value`) VALUES ("user1", "Password", "testpwd");'
 
 
 
