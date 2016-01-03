@@ -22,7 +22,14 @@ cd vagrant-freeRADIUS
 vagrant up
 ```
 
-To test the RADIUS server, execute:
+It comes with daloRADIUS Web Inteface. to access it, visit http://192.168.33.81/daloradius/index.php
+
+```
+username: administrator
+password: radius
+```
+
+To test the RADIUS server directly, execute inside the VM:
 
 ```
 sudo radtest user1 testpwd localhost 18128 testing123

@@ -29,3 +29,18 @@ sudo cp /vagrant/sites-available/default /etc/freeradius/sites-available/default
 sudo cp /vagrant/conf/radiusd.conf /etc/freeradius/radiusd.conf
 sudo /etc/init.d/freeradius stop
 sudo /etc/init.d/freeradius start
+
+
+cd /vagrant
+tar xvfz daloradius-0.9-9.tar.gz
+mv daloradius-0.9-9 daloradius
+sudo mv daloradius /var/www
+sudo chown www-data:www-data /var/www/daloradius -R
+sudo chmod 644 /var/www/daloradius/library/daloradius.conf.php
+cd /var/www/daloradius/contrib/db
+sudo mysql -u root -psecret radius < mysql-daloradius.sql
+sudo cp /vagrant/conf/daloradius.conf.php /var/www/daloradius/library/daloradius.conf.php
+sudo cp /vagrant/conf/daloradius.conf /etc/apache2/sites-available/
+sudo a2ensite daloradius
+sudo service apache2 reload
+
