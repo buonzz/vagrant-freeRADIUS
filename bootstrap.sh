@@ -44,3 +44,6 @@ sudo cp /vagrant/conf/daloradius.conf /etc/apache2/sites-available/
 sudo a2ensite daloradius
 sudo service apache2 reload
 
+# reload radius service
+sudo service freeradius stop
+sudo service freeradius start
