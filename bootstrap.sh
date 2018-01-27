@@ -3,6 +3,11 @@
 echo mysql-server-5.5 mysql-server/root_password password secret | debconf-set-selections
 echo mysql-server-5.5 mysql-server/root_password_again password secret | debconf-set-selections
 
+# <beginning of jlk modif
+sudo apt-get update
+sudo apt-get upgrade
+# end of jlk modif>
+
 sudo apt-get install mysql-server php5-mysql -y
 sudo mysql_install_db
 
